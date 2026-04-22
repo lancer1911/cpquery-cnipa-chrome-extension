@@ -21,13 +21,13 @@
       <td>📄 图片转 PDF</td>
       <td>在案件详情页将多张图片合并为单一 PDF</td>
       <td><img src="images/screenshot-6.png" width="300"/></td>
-      <td>默认</td>
+      <td>所有人</td>
     </tr>
     <tr>
       <td>📥 PDF 直接下载</td>
       <td>在 PDF 查看器页面添加下载按钮，文件名含申请号和标题</td>
       <td><img src="images/screenshot-5.png" width="300"/></td>
-      <td>默认</td>
+      <td>所有人</td>
     </tr>
     <tr>
       <td>📊 口审通知书信息导出</td>
