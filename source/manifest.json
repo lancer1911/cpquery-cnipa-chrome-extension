@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "专利信息查询增强工具",
+  "version": "4.0",
+  "description": "专利信息查询增强工具：口审信息批量导出、PDF下载、图片转PDF",
+  "permissions": [
+    "tabs",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://cpquery.cponline.cnipa.gov.cn/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "专利信息查询增强工具",
+    "default_popup": "options.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://cpquery.cponline.cnipa.gov.cn/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://cpquery.cponline.cnipa.gov.cn/*"
+      ],
+      "js": [
+        "jspdf.umd.min.js",
+        "xlsx.full.min.js",
+        "xlsx.style.min.js",
+        "content.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ]
+}

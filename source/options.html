@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专利信息查询增强工具 - 设置</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      overflow-y: auto;
+    }
+
+    body {
+      width: 340px;
+      font-family: -apple-system, "Microsoft YaHei", sans-serif;
+      font-size: 13px;
+      color: #333;
+      background: #fff;
+    }
+
+    .header {
+      background: #1976d2;
+      color: #fff;
+      padding: 14px 16px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .body { padding: 14px 16px; }
+
+    .section { margin-bottom: 18px; }
+    .section-title {
+      font-weight: bold;
+      color: #1976d2;
+      margin-bottom: 4px;
+      font-size: 12px;
+      letter-spacing: 0.4px;
+    }
+    .hint {
+      font-size: 11px;
+      color: #888;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .feature-list li { font-size: 12px; line-height: 1.55; display: flex; gap: 6px; color: #555; }
+    .feature-list .icon { flex-shrink: 0; }
+    .tag-pro  { background: #fff3e0; color: #e65100; font-size: 10px; font-weight: bold; display: inline-block; padding: 1px 5px; border-radius: 3px; vertical-align: middle; margin-left: 4px; }
+
+    .steps { display: flex; flex-direction: column; gap: 5px; }
+    .steps li { font-size: 12px; color: #555; line-height: 1.5; display: flex; gap: 6px; }
+
+    .divider { border: none; border-top: 1px solid #eee; margin: 4px 0 18px; }
+
+    .pro-section {
+      margin-top: 18px;
+      border-top: 1px solid #eee;
+      padding-top: 14px;
+    }
+    .pro-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .pro-badge {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f5a623, #e8860a);
+      color: #fff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    .pro-badge-desc { font-size: 11px; color: #888; }
+
+    .pro-input-row { display: flex; gap: 8px; align-items: center; }
+
+    .pro-input {
+      flex: 1;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      letter-spacing: 1px;
+    }
+    .pro-input:focus { border-color: #f5a623; }
+    .pro-input.error { border-color: #e53935; }
+
+    .unlock-btn {
+      background: #f5a623; color: #fff; border: none;
+      border-radius: 6px; padding: 7px 14px;
+      font-size: 12px; font-weight: bold; cursor: pointer;
+      white-space: nowrap; transition: opacity 0.15s; flex-shrink: 0;
+    }
+    .unlock-btn:hover { opacity: 0.85; }
+
+    .unlock-msg { font-size: 11px; min-height: 16px; margin-top: 5px; font-weight: bold; }
+    .unlock-msg.ok  { color: #2e7d32; }
+    .unlock-msg.err { color: #e53935; }
+
+    .unlocked-box {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 8px;
+    }
+    .pro-unlocked-label { font-size: 11px; color: #2e7d32; font-weight: bold; }
+    .relock-btn {
+      background: none; border: none; color: #bbb;
+      font-size: 11px; cursor: pointer; padding: 2px 4px; text-decoration: underline;
+    }
+    .relock-btn:hover { color: #e53935; }
+
+    .guide-section {
+      margin-top: 18px;
+      border-top: 1px solid #eee;
+      padding-top: 14px;
+    }
+    .guide-steps { display: flex; flex-direction: column; gap: 10px; }
+    .guide-step { border-left: 2px solid #1976d2; padding-left: 10px; }
+    .guide-step h4 { font-size: 12px; color: #1976d2; font-weight: bold; margin-bottom: 4px; }
+    .guide-step p  { font-size: 11px; color: #666; line-height: 1.55; }
+    .guide-image {
+      display: block; width: 100%; border-radius: 6px;
+      border: 1px solid #eee; margin-top: 8px;
+    }
+    .guide-tip {
+      background: #fff8e1; border: 1px solid #ffe082;
+      border-radius: 6px; padding: 8px 10px;
+      font-size: 11px; color: #7a5a00; line-height: 1.55; margin-top: 10px;
+    }
+
+    .hidden { display: none !important; }
+
+    .footer { text-align: center; font-size: 11px; color: #bbb; padding: 6px 0 14px; }
+  </style>
+</head>
+<body>
+
+<div class="header">⚙️ 专利信息查询增强工具 · 设置</div>
+
+<div class="body">
+
+  <!-- 功能说明 -->
+  <div class="section">
+    <div class="section-title">功能说明</div>
+    <ul class="feature-list">
+      <li><span class="icon">📄</span><span>图片转PDF：在案件详情页将页面多张图片合并为单一 PDF。</span></li>
+      <li><span class="icon">📥</span><span>PDF 直接下载：在 PDF 查看器页面添加下载按钮，文件名含申请号和标题。</span></li>
+      <li><span class="icon">📊</span><span>口审信息批量导出：在口审公告列表页自动翻页并导出 Excel。<span class="tag-pro">PRO</span></span></li>
+      <li><span class="icon">📋</span><span>复审/无效决定导出：在无效决定列表页自动下载 PDF 并导出 Excel。<span class="tag-pro">PRO</span></span></li>
+      <li><span class="icon">🔔</span><span>诉讼/无效预警：通过监测无效宣告请求缴费、专利登记簿副本缴费及专利权评价报告缴费记录，自动识别目标专利潜在诉讼或无效风险并发出提示。<span class="tag-pro">PRO</span></span></li>
+    </ul>
+  </div>
+
+  <!-- PRO 解锁区 -->
+  <div class="pro-section">
+    <div class="pro-badge-row">
+      <span class="pro-badge">★ PRO</span>
+      <span class="pro-badge-desc" id="pro-status-badge">解锁后启用批量处理功能</span>
+    </div>
+
+    <!-- 未解锁 -->
+    <div id="unlock-section">
+      <div class="hint">输入您的邮箱和对应的授权 UUID 以启用 PRO 功能。解锁后刷新目标页面即可看到控制面板。</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:6px;">
+        <input class="pro-input" id="email-input" type="email" placeholder="请输入邮箱地址" autocomplete="off" style="letter-spacing:0;">
+        <div class="pro-input-row">
+          <input class="pro-input" id="uuid-input" type="text" placeholder="请输入授权 UUID" autocomplete="off" style="font-size:11px;">
+          <button class="unlock-btn" id="unlock-btn">解锁</button>
+        </div>
+      </div>
+      <div class="unlock-msg" id="unlock-msg"></div>
+    </div>
+
+    <!-- 已解锁 -->
+    <div id="unlocked-box" class="hidden">
+      <div class="unlocked-box">
+        <span class="pro-unlocked-label">✅ 批量处理已解锁</span>
+        <button class="relock-btn" id="relock-btn">重新锁定</button>
+      </div>
+      <div id="expire-label" style="font-size:11px;color:#888;margin-top:5px;"></div>
+    </div>
+  </div>
+
+  <!-- 使用说明（PRO 解锁后显示） -->
+  <div class="guide-section hidden" id="guide-card">
+    <div class="section-title">口审通知书信息导出 · 使用说明</div>
+    <div class="hint">解锁后请先完成浏览器弹窗权限设置，再刷新目标页面使用。</div>
+    <div class="guide-steps" id="guide-page">
+      <div class="guide-step">
+        <h4>步骤 1：确认控制面板已出现</h4>
+        <p>进入口审公告列表页后，页面右上角会显示控制面板，填写起止页码后点击「开始」。</p>
+        <img class="guide-image" src="guide_panel.png" alt="控制面板示意图">
+      </div>
+      <div class="guide-step">
+        <h4>步骤 2：允许浏览器弹出窗口</h4>
+        <p>首次点击「开始」时浏览器可能拦截弹窗，请选择「始终允许弹出窗口并从 cpquery.cponline.cnipa.gov.cn 重定向」。</p>
+        <img class="guide-image" src="guide_popup_warning.png" alt="弹窗拦截提示">
+      </div>
+      <div class="guide-step">
+        <h4>步骤 3：或手动在站点权限中允许</h4>
+        <p>点击地址栏左侧图标，在「弹出窗口和重定向」中手动改为「已允许」。</p>
+        <img class="guide-image" src="guide_site_permission.png" alt="站点权限设置">
+      </div>
+      <div class="guide-tip">权限设置完成后请刷新页面，再使用导出功能。</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">专利信息查询增强工具 · PRO · v4.0a</div>
+
+<script src="options.js"></script>
+</body>
+</html>
