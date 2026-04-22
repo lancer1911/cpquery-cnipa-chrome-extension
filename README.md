@@ -1,5 +1,5 @@
 # Patent Information Query Enhancement Tool
-> Chrome Extension · For the [CNIPA Patent Search and Analysis System](https://cpquery.cponline.cnipa.gov.cn/)
+> Chrome Extension · For the [CNIPA Patent Search System](https://cpquery.cponline.cnipa.gov.cn/)
 >
 > **Current Version: v4.0**
 
