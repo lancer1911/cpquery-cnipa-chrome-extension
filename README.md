@@ -1,103 +1,100 @@
-# 专利信息查询增强工具
-> Chrome 扩展 · 适用于 [国家知识产权局专利检索及分析系统](https://cpquery.cponline.cnipa.gov.cn/)
-> 
-> **当前版本：v4.0**
+# Patent Information Query Enhancement Tool
+> Chrome Extension · For the [CNIPA Patent Search and Analysis System](https://cpquery.cponline.cnipa.gov.cn/)
+>
+> **Current Version: v4.0**
 
 ---
 
-## 功能概览
+## Overview
 
 <table>
   <thead>
     <tr>
-      <th>功能</th>
-      <th>说明</th>
-      <th>截图</th>
-      <th>权限</th>
+      <th>Feature</th>
+      <th>Description</th>
+      <th>Screenshot</th>
+      <th>Access</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>📄 图片转 PDF</td>
-      <td>在案件详情页将多张图片合并为单一 PDF</td>
+      <td>📄 Images to PDF</td>
+      <td>Merges multiple images into a single PDF on the case details page</td>
       <td><img src="images/screenshot-6.png" width="300"/></td>
-      <td>所有人</td>
+      <td>Available to All Users</td>
     </tr>
     <tr>
-      <td>📥 PDF 直接下载</td>
-      <td>在 PDF 查看器页面添加下载按钮，文件名含申请号和标题</td>
+      <td>📥 Direct PDF Download</td>
+      <td>Adds a download button on the PDF viewer page. The downloaded file name includes the application number and title</td>
       <td><img src="images/screenshot-5.png" width="300"/></td>
-      <td>所有人</td>
+      <td>Available to All Users</td>
     </tr>
     <tr>
-      <td>📊 口审通知书信息导出</td>
-      <td>在口审公告列表页自动翻页并导出 Excel</td>
+      <td>📊 Oral Hearing Notice Export</td>
+      <td>Automatically turns pages and exports Excel data on the oral hearing notice list page</td>
       <td><img src="images/screenshot-3.png" width="300"/></td>
       <td><strong>PRO</strong></td>
     </tr>
     <tr>
-      <td>📋 复审/无效决定导出</td>
-      <td>在无效决定列表页自动下载 PDF 并导出 Excel</td>
+      <td>📋 Reexamination / Invalidation Decision Export</td>
+      <td>Automatically downloads PDFs and exports Excel data on the invalidation decision list page</td>
       <td><img src="images/screenshot-2.png" width="300"/></td>
       <td><strong>PRO</strong></td>
     </tr>
     <tr>
-      <td>📡 诉讼/无效预警</td>
-      <td>通过监测无效宣告请求缴费、专利登记簿副本缴费及专利权评价报告缴费记录，自动识别目标专利潜在诉讼或无效风险</td>
+      <td>📡 Litigation / Invalidation Alert</td>
+      <td>Automatically identifies potential litigation or invalidation risks for target patents by monitoring payment records for invalidation requests, patent register copies, and patent evaluation reports</td>
       <td><img src="images/screenshot-1.png" width="300"/></td>
       <td><strong>PRO</strong></td>
     </tr>
   </tbody>
 </table>
 
-## 安装方法
+## Installation
 
-1. 前往 [Releases](../../releases) 页面，下载最新版本的 `.zip` 压缩包
-2. 解压到本地任意文件夹
-3. 打开 Chrome，地址栏输入 `chrome://extensions/`
-4. 右上角开启**开发者模式**
-5. 点击**加载已解压的扩展程序**，选择解压后的文件夹
-6. 扩展图标出现在工具栏，安装完成
-
----
-
-## PRO 功能解锁
-
-点击工具栏扩展图标，在弹出的设置面板底部找到 **★ PRO** 区域：
-
-1. 在**邮箱**栏输入您的授权邮箱
-2. 在 **UUID** 栏输入对应的授权码
-3. 点击**解锁**，验证通过后 PRO 功能即刻生效
-
-> 授权码有效期为 **6 周**，解锁状态有效期为 **6 个月**，到期后需重新输入新授权码解锁。
-
-本项目PRO功能仅提供给内部测试用户使用，恕不供外部人员使用。
+1. Go to the [Releases](../../releases) page and download the latest `.zip` package.
+2. Extract the package to any local folder.
+3. Open Chrome and enter `chrome://extensions/` in the address bar.
+4. Turn on **Developer mode** in the upper-right corner.
+5. Click **Load unpacked** and select the extracted folder.
+6. Once the extension icon appears in the toolbar, the installation is complete.
 
 ---
 
-## 使用说明
+## Unlocking PRO Features
 
+Click the extension icon in the toolbar and locate the **★ PRO** section at the bottom of the popup settings panel:
 
-**注意：首次使用时浏览器可能拦截弹出窗口，请按以下方式处理：**
+1. Enter your authorized email address in the **Email** field.
+2. Enter the corresponding authorization code in the **UUID** field.
+3. Click **Unlock**. Once verification succeeds, the PRO features will be activated immediately.
 
-**方式一：** 点击提示选择「始终允许弹出窗口并从 cpquery.cponline.cnipa.gov.cn 重定向」
+> The authorization code is valid for **6 weeks**, and the unlocked status remains valid for **6 months**. After expiration, a new authorization code must be entered to unlock the PRO features again.
+
+The PRO features of this project are provided only to internal test users and are not available to external users.
+
+---
+
+## Instructions for Use
+
+**Note: when using the extension for the first time, the browser may block pop-ups. Please handle it as follows:**
+
+**Method 1:** Click the browser prompt and choose **Always allow pop-ups and redirects from cpquery.cponline.cnipa.gov.cn**.
 
 <img src="images/guide_popup_warning.png" width="350"/>
 
-**方式二：** 点击地址栏左侧图标，在「弹出窗口和重定向」中手动改为「已允许」，并将「自动下载」同样设为「已允许」
+**Method 2:** Click the icon on the left side of the address bar, then manually change **Pop-ups and redirects** to **Allow**. Also set **Automatic downloads** to **Allow**.
 
 <img src="images/guide_site_permission.png" width="350"/>
 
-> 权限设置完成后请**刷新页面**，再使用导出功能。
+> After changing these permission settings, please **refresh the page** before using the export features.
 
 ---
 
-## 注意事项
+## Notes
 
-- 本扩展仅供个人学习使用，已进行混淆，请勿破解
-- PRO功能恕不提供外部人员使用
-- 本扩展仅在 `cpquery.cponline.cnipa.gov.cn` 域名下运行，不读取或上传任何用户数据
-- 批量处理时扩展会在每条记录间自动添加随机间隔，请勿在该过程中手动操作页面
-- 导出的数据仅供参考，请以官方系统显示信息为准
-
-
+- This extension is for personal learning purposes only. The code has been obfuscated. Please do not attempt to crack or reverse engineer it.
+- PRO features are not available to external users.
+- This extension runs only under the `cpquery.cponline.cnipa.gov.cn` domain and does not read or upload any user data.
+- During batch processing, the extension automatically inserts random intervals between records. Please do not manually operate the page during the process.
+- Exported data is for reference only. Please refer to the information displayed in the official system as the final authority.
